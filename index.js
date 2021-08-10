@@ -185,7 +185,7 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-function getRandomFlavors(arr1, arr2, arr3, arr4) {
+function getRandomFlavors() {
   // const newArr = [...arr1, ...arr2, ...arr3, ...arr4];
   // const returnArr = [];
   // while (returnArr.length < 31) {
