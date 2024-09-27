@@ -2,38 +2,38 @@
 
 /* 👀 This is your data ⬇ */
 const originalFlavors = [
-  "Banana Nut Fudge",
-  "Black Walnut",
-  "Burgundy Cherry",
-  "Butterscotch Ribbon",
-  "Cherry Macaron",
-  "Chocolate",
-  "Chocolate Almond",
-  "Chocolate Chip",
-  "Chocolate Fudge",
-  "Chocolate Mint",
-  "Chocolate Ribbon",
-  "Coffee",
-  "Coffee Candy",
-  "Date Nut",
-  "Eggnog",
-  "French Vanilla",
-  "Green Mint Stick",
-  "Lemon Crisp",
-  "Lemon Custard",
-  "Lemon Sherbet",
-  "Maple Nut",
-  "Orange Sherbet",
-  "Peach",
-  "Peppermint Fudge Ribbon",
-  "Peppermint Stick",
-  "Pineapple Sherbet",
-  "Raspberry Sherbet",
-  "Rocky Road",
-  "Strawberry",
-  "Vanilla",
-  "Vanilla Burnt Almond"
-]
+  'Banana Nut Fudge',
+  'Black Walnut',
+  'Burgundy Cherry',
+  'Butterscotch Ribbon',
+  'Cherry Macaron',
+  'Chocolate',
+  'Chocolate Almond',
+  'Chocolate Chip',
+  'Chocolate Fudge',
+  'Chocolate Mint',
+  'Chocolate Ribbon',
+  'Coffee',
+  'Coffee Candy',
+  'Date Nut',
+  'Eggnog',
+  'French Vanilla',
+  'Green Mint Stick',
+  'Lemon Crisp',
+  'Lemon Custard',
+  'Lemon Sherbet',
+  'Maple Nut',
+  'Orange Sherbet',
+  'Peach',
+  'Peppermint Fudge Ribbon',
+  'Peppermint Stick',
+  'Pineapple Sherbet',
+  'Raspberry Sherbet',
+  'Rocky Road',
+  'Strawberry',
+  'Vanilla',
+  'Vanilla Burnt Almond',
+];
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: Copy the Array! 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 We have an array called originalFlavors with 31 flavors (see above).  In these tasks, we will be reading and writing data to this array.  
@@ -45,13 +45,9 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
-}    
-
-
-
-
+function copy(arr) {
+  return [...arr];
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
@@ -63,9 +59,8 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(arr) {
+  return arr.length === 31;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -80,11 +75,9 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(arr, string) {
+  return [string, ...arr];
 }
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -97,11 +90,10 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arr) {
+  arr.pop();
+  return arr;
 }
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -114,10 +106,9 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, idx) {
+  return arr[idx];
 }
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -134,11 +125,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arr, string) {
+  // return arr.filter((iceCream) => iceCream !== string);
+  let returnArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === string) continue;
+    returnArr.push(arr[i]);
+  }
+  return returnArr;
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -160,12 +155,17 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arr, string) {
+  // return arr.filter((iceCream) => iceCream.indexOf(string) !== -1);
+  let returnArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(string)) continue;
+    returnArr.push(arr[i]);
+  }
+  return returnArr;
 }
 
-
-/* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
+/* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
 
@@ -177,10 +177,20 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(arr) {
+  // return (
+  //   arr.reduce((accum, curr) => {
+  //     return (accum += curr.length);
+  //   }, 0) / arr.length
+  // );
+  let totalWords = 0;
+  for (let i = 0; i < arr.length; i++) {
+    totalWords += arr[i].split(' ').length;
+  }
+  return totalWords / arr.length;
 }
 
+console.log(getAverageWordLength(originalFlavors));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
@@ -194,96 +204,109 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-
-function getRandomFlavors(/*code here*/){
-  /*code here*/
+function getRandomFlavors(arr1, arr2, arr3, arr4) {
+  const newArr = [...arr1, ...arr2, ...arr3, ...arr4];
+  const returnArr = [];
+  while (returnArr.length < 31) {
+    let randomIdx = Math.round(Math.random() * 30);
+    if (!returnArr.includes(newArr[randomIdx]))
+      returnArr.push(newArr[randomIdx]);
+  }
+  return returnArr;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const newFlavors = [
-//   "Date night",
-//   "U.S.S Butterscotch (Stranger Things special)",
-//   "Honey Almond",
-//   "Mint Chocolate Chip",
-//   "Chocolate",
-//   "Oreo® Cookies'n Cream",
-//   "Chocolate Chip",
-//   "Pralines 'n Cream",
-//   "Very Berry Strawberry",
-//   "Chocolate Chip Cookie Dough",
-//   "Old Fashioned Butter Pecan",
-//   "Jamoca®",
-//   "Jamoca® Almond Fudge",
-//   "Reese's® Peanut Butter Cup",
-//   "Rocky Road",
-//   "Peanut Butter ’n Chocolate",
-//   "Gold Medal Ribbon®",
-//   "World Class® Chocolate",
-//   "Cherries Jubilee",
-//   "Chocolate Fudge",
-//   "Daiquiri Ice",
-//   "Rainbow Sherbet",
-//   "Rainbow Swirl"
-// ] 
+const newFlavors = [
+  'Date night',
+  'U.S.S Butterscotch (Stranger Things special)',
+  'Honey Almond',
+  'Mint Chocolate Chip',
+  'Chocolate',
+  "Oreo® Cookies'n Cream",
+  'Chocolate Chip',
+  "Pralines 'n Cream",
+  'Very Berry Strawberry',
+  'Chocolate Chip Cookie Dough',
+  'Old Fashioned Butter Pecan',
+  'Jamoca®',
+  'Jamoca® Almond Fudge',
+  "Reese's® Peanut Butter Cup",
+  'Rocky Road',
+  'Peanut Butter ’n Chocolate',
+  'Gold Medal Ribbon®',
+  'World Class® Chocolate',
+  'Cherries Jubilee',
+  'Chocolate Fudge',
+  'Daiquiri Ice',
+  'Rainbow Sherbet',
+  'Rainbow Swirl',
+];
 
-// const seasonalFlavors = [
-//   "America's Birthday Cake",
-//   "Baseball Nut®",
-//   "Blueberry Cheesecake",
-//   "Bourbon Street Pecan Pie",
-//   "Brownie Bar Mashup",
-//   "Cherry Cordial with Kisses",
-//   "Chocolate Mousse Royale",
-//   "French Vanilla",
-//   "Eggnog",
-//   "German Chocolate Cake",
-//   "Icing on the Cake",
-//   "Love Potion #31",
-//   "New York Cheesecake",
-//   "Nutty Coconut",
-//   "Peppermint",
-//   "Strawberry Cheesecake",
-//   "Rock ’n Pop Swirl",
-//   "Reese’s Peanut Butter Cup",
-//   "Trick Oreo Treat",
-//   "Winter White Chocolate",
-//   "made with Snickers®",
-//   "made with M&M's®",
-//   "Heath®",
-//   "Mango Tango"
-// ]
+const seasonalFlavors = [
+  "America's Birthday Cake",
+  'Baseball Nut®',
+  'Blueberry Cheesecake',
+  'Bourbon Street Pecan Pie',
+  'Brownie Bar Mashup',
+  'Cherry Cordial with Kisses',
+  'Chocolate Mousse Royale',
+  'French Vanilla',
+  'Eggnog',
+  'German Chocolate Cake',
+  'Icing on the Cake',
+  'Love Potion #31',
+  'New York Cheesecake',
+  'Nutty Coconut',
+  'Peppermint',
+  'Strawberry Cheesecake',
+  'Rock ’n Pop Swirl',
+  'Reese’s Peanut Butter Cup',
+  'Trick Oreo Treat',
+  'Winter White Chocolate',
+  'made with Snickers®',
+  "made with M&M's®",
+  'Heath®',
+  'Mango Tango',
+];
 
-// const regionalFlavors = [
-//   "Pink Bubblegum",
-//   "Caramel Macchiato",
-//   "York Peppermint Pattie",
-//   "Cotton Candy",
-//   "Orange Sherbet",
-//   "Grape Ice",
-//   "Watermelon Ice",
-//   "Miami Vice Sorbet",
-//   "Splish Splash®",
-//   "Wild 'n Reckless Sherbet",
-//   "Lemon Custard",
-//   "Oregon Blackberry",
-//   "Bananas ‘n Strawberries",
-//   "Mississippi Mud",
-//   "Rum Raisin",
-//   "Creole Cream Cheese",
-//   "Chocolate Almond",
-//   "Fudge Brownie",
-//   "Banana Nut",
-//   "Black Walnut",
-//   "Cotton Candy Crackle",
-//   "Quarterback Crunch",
-//   "Chocolate Chocolate Chip Cheesecake",
-//   "Caramel 'n' Cookies"
-// ]
+const regionalFlavors = [
+  'Pink Bubblegum',
+  'Caramel Macchiato',
+  'York Peppermint Pattie',
+  'Cotton Candy',
+  'Orange Sherbet',
+  'Grape Ice',
+  'Watermelon Ice',
+  'Miami Vice Sorbet',
+  'Splish Splash®',
+  "Wild 'n Reckless Sherbet",
+  'Lemon Custard',
+  'Oregon Blackberry',
+  'Bananas ‘n Strawberries',
+  'Mississippi Mud',
+  'Rum Raisin',
+  'Creole Cream Cheese',
+  'Chocolate Almond',
+  'Fudge Brownie',
+  'Banana Nut',
+  'Black Walnut',
+  'Cotton Candy Crackle',
+  'Quarterback Crunch',
+  'Chocolate Chocolate Chip Cheesecake',
+  "Caramel 'n' Cookies",
+];
 
-
+console.log(
+  getRandomFlavors(
+    newFlavors,
+    seasonalFlavors,
+    regionalFlavors,
+    originalFlavors
+  )
+);
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
-function foo(){
+function foo() {
   console.log('its working');
   return 'bar';
 }
@@ -298,6 +321,5 @@ module.exports = {
   copy,
   filterByWord,
   getAverageWordLength,
-  getRandomFlavors
-}
-
+  getRandomFlavors,
+};
